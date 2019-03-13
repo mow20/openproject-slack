@@ -11,7 +11,7 @@ class OpenProject::Slack::HookListener < Redmine::Hook::Listener
     message = "[#{project_url}] #{page_url} updated by *#{user}*"
 
     channel = channel_for_project project
-    url = Setting.plugin_openproject_slack['slack_url']
+    url = channel
 
     return if channel.blank? || url.blank?
 
