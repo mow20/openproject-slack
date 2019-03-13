@@ -27,7 +27,7 @@ class OpenProject::Slack::Notifier
     params[:attachments] = [attachment] if attachment.present?
 
     begin
-      @client.post(slack_url, { payload: params.to_json })
+      @client.post(channel, { payload: params.to_json })
     rescue SocketError => e
       Rails.logger.warn(e)
     end
